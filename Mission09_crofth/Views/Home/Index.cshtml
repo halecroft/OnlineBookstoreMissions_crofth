@@ -3,22 +3,29 @@
 
 @model BooksViewModel
 
-<h1>Bookstore</h1>
 
 @foreach (Book book in Model.Books)
 {
-    <h3>@book.Title</h3>
-
-    <ul>
-        <li>Author: @book.Author</li>
-        <li>Publisher: @book.Publisher</li>
-        <li>ISBN: @book.Isbn</li>
-        <li>Classification/Category: @book.Classification/@book.Category</li>
-        <li>Number of Pages: @book.PageCount</li>
-        <li>Price: $@book.Price</li>
-    </ul>
+    <div class="card card-outline-primary m-1 p-1">
+        <div class="bg-faded p-1">
+            <h4>
+                @book.Title
+                <span class="badge bg-primary rounded-pill" style="float:right">
+                    <small>@book.Price.ToString("c")</small>
+                </span>
+            </h4>
+        </div>
+        <div class="card-text p-1">@book.Author</div>
+        <div class="card-text p-1">@book.Publisher</div>
+        <div class="card-text p-1">ISBN: @book.Isbn</div>
+        <div class="card-text p-1">@book.Classification/@book.Category</div>
+        <div class="card-text p-1">@book.PageCount pages</div>
+    </div>
 
     <br />
 }
 
-<div page-blah="@Model.PageInfo" page-action="Index"></div>
+<div page-blah="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1">
+</div>
