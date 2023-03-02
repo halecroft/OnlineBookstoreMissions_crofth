@@ -7,7 +7,7 @@ using Mission09_crofth.Models.ViewModels;
 
 namespace Mission09_crofth.Infrastructure
 {
-    [HtmlTargetElement("dif", Attributes = "page-model")]
+    [HtmlTargetElement("div", Attributes = "page-blah")]
     public class PaginationTagHelper : TagHelper
     {
         private IUrlHelperFactory uhf;
@@ -31,7 +31,7 @@ namespace Mission09_crofth.Infrastructure
 
             TagBuilder final = new TagBuilder("div");
 
-            for (int i = 1; i < PageBlah.TotalPages; i++)
+            for (int i = 1; i <= PageBlah.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
 
