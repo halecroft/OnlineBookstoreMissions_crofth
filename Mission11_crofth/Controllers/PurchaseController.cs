@@ -35,7 +35,7 @@ namespace Mission11_crofth.Controllers
                 _purchaseRepository.SavePurchase(purchase);
                 cart.ClearCart();
 
-                return View();
+                return RedirectToPage("/PurchaseCompleted");
             }
             else
             {
