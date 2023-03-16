@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="/lib/css/bootstrap.css" rel="stylesheet" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <div>
         <nav class="navbar navbar-dark bg-dark text-white p-2 justify-content-between">
             <span class="navbar-brand ml-2">Bookstore</span>
-            <a class="nav-item nav-link" href="/Purchase">Cart</a>
+            <div class="nav-item text-right">
+                <vc:cart-summary />
+            </div>
         </nav>
         <div class="row m-1 p-1">
             <div id="categories" class="col-3">
